@@ -5,6 +5,7 @@
         "node": true
     },
     "extends": [
+        "plugin:vue-a11y/base",
         "plugin:vue/essential",
         "standard"
     ],
@@ -17,7 +18,8 @@
         "sourceType": "module"
     },
     "plugins": [
-        "vue"
+        "vue",
+        "vue-a11y"
     ],
     "rules": {
     }
