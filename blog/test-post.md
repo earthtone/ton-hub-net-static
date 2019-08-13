@@ -1,6 +1,6 @@
 ---
 title: "Test Post"
-desciption: "A test MD blog post to ensure gridsome plugins are still configured correctly"
+description: "A test MD blog post to ensure gridsome plugins are still configured correctly"
 date: 2019-08-13
 ---
 Elit repellendus dolorum nesciunt quia ad Nihil tenetur obcaecati optio aspernatur velit? Cumque iure accusantium incidunt unde nemo? Blanditiis earum soluta dolore rerum laboriosam Rerum voluptatibus error ea ipsa maiores?
