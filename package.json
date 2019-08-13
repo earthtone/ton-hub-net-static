@@ -4,7 +4,8 @@
   "scripts": {
     "build": "gridsome build",
     "develop": "gridsome develop",
-    "explore": "gridsome explore"
+    "explore": "gridsome explore",
+    "test": "ava"
   },
   "dependencies": {
     "animate.css": "^3.7.2",
@@ -15,6 +16,18 @@
     "@gridsome/remark-prismjs": "^0.1.0",
     "@gridsome/source-filesystem": "^0.5.0",
     "@gridsome/transformer-remark": "^0.3.2",
+    "@vue/test-utils": "^1.0.0-beta.29",
+    "ava": "^2.2.0",
+    "browser-env": "^3.2.6",
+    "require-extension-hooks": "^0.3.3",
+    "require-extension-hooks-babel": "^1.0.0",
+    "require-extension-hooks-vue": "^3.0.0",
     "tailwindcss": "^1.1.0"
+  },
+  "ava": {
+    "require": [
+      "./ava.setup.js",
+      "esm"
+    ]
   }
 }

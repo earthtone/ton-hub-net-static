@@ -3,7 +3,7 @@
     <g-link slot="logo" to="/blog" class="link">  &larr; Go Back</g-link>
     <div class="post-title lg:max-w-2xl mx-auto">
       <h1 class="text-xl">{{$page.post.title}}</h1>
-      <h6 class="post-date uppercase mb-3 pl-3 font-hariline"> {{ $page.post.date}} | {{$page.post.timeToRead}} min read</h6>
+      <h6 class="post-date uppercase mb-3 pl-3 font-hariline"> {{$page.post.date}} | {{$page.post.timeToRead}} min read</h6>
     </div>
     <div class="post-content  md:max-w-2xl mx-auto lg:px-12">
       <article v-html="$page.post.content" class="md:font-serif" />
