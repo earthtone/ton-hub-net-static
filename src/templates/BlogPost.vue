@@ -1,0 +1,42 @@
+<template>
+  <Layout class="px-6 py-3">
+    <g-link slot="logo" to="/blog" class="link">  &larr; Go Back</g-link>
+    <div class="post-title lg:max-w-2xl mx-auto">
+      <h1 class="text-xl">{{$page.post.title}}</h1>
+      <h6 class="post-date uppercase mb-3 pl-3 font-hariline"> {{ $page.post.date}} | {{$page.post.timeToRead}} min read</h6>
+    </div>
+    <div class="post-content  md:max-w-2xl mx-auto lg:px-12">
+      <article v-html="$page.post.content" class="md:font-serif" />
+    </div>
+  </Layout>
+</template>
+
+<page-query>
+query BlogPost ($path: String!) {
+   post: blogPost (path: $path) {
+    id
+    title
+    content
+    date (format: "D MMMM YYYY")
+    timeToRead
+  }
+}
+</page-query>
+
+<style scoped>
+  /deep/ .post-content article p {
+    @apply py-3;
+  }
+
+  /deep/ .post-content article h1 {
+    @apply text-xl leading-none; 
+  }
+
+  /deep/ .post-content article h2 {
+    @apply text-lg leading-tight; 
+  }
+
+  /deep/ .post-content article h3 {
+    @apply uppercase; 
+  }
+</style>
