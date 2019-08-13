@@ -4,8 +4,8 @@ import PostList from '../PostList.vue'
 
 // Tests aren't really necessary for a basic static site
 // but since the CI/CD pipeline is being put in I thought
-// it would be useful to include at least one test for 
-// the test script to run and to use as a reference for 
+// it would be useful to include at least one test for
+// the test script to run and to use as a reference for
 // setting up tests for more complex components I may add
 // to the site in future
 

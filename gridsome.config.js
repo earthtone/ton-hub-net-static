@@ -1,4 +1,4 @@
-// This is where project configuration and plugin options are located. 
+// This is where project configuration and plugin options are located.
 // Learn more: https://gridsome.org/docs/config
 
 // Changes here require a server restart.
@@ -22,7 +22,7 @@ module.exports = {
       externalLinksTarget: '_blank',
       externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
       plugins: ['@gridsome/remark-prismjs']
-    } 
+    }
   },
   plugins: [{
     use: '@gridsome/source-filesystem',
@@ -34,8 +34,8 @@ module.exports = {
   css: {
     loaderOptions: {
       postcss: {
-        plugins: postcssPlugins 
-      } 
-    } 
+        plugins: postcssPlugins
+      }
+    }
   }
 }
