@@ -1,5 +1,5 @@
 <template>
-  <Layout class="px-3">
+  <Layout id="blog-page" class="px-3">
     <header class="header mx-auto lg:max-w-3xl my-12">
       <h1 class="font-serif text-xl md:text-2xl leading-tight">
         {{ title }}
