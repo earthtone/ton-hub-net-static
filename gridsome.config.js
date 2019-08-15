@@ -17,18 +17,23 @@ if (process.env.NODE_ENV === 'production') {
 module.exports = {
   siteName: 'Tonio Hubilla',
   titleTemplate: '%s',
-  transformers: {
-    remark: {
-      externalLinksTarget: '_blank',
-      externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-      plugins: ['@gridsome/remark-prismjs']
-    }
-  },
   plugins: [{
     use: '@gridsome/source-filesystem',
     options: {
       path: 'blog/**/*.md',
-      typeName: 'BlogPost'
+      typeName: 'BlogPost',
+      remark: {
+        externalLinksTarget: '_blank',
+        externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+        plugins: ['@gridsome/remark-prismjs']
+      }
+    }
+  }, {
+    use: '@gridsome/source-filesystem',
+    options: {
+      path: 'src/data/cv/*.json',
+      typeName: 'CompanyJob',
+      json: {}
     }
   }],
   css: {
