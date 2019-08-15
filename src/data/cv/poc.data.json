@@ -1,0 +1,170 @@
+{
+    "name": "@Point of Care, LLC",
+    "website": "https://atpointofcare.com",
+    "location": "Livingston, NJ USA",
+    "positions": [
+      {
+        "title": "Lead Front End Web Developer",
+        "contract": true,
+        "duration": "September 2017 - June 2018",
+        "startDate": "2017-09",
+        "endDate": "2018-06",
+        "projects": [
+          {
+            "name": "Internal Web Application",
+            "technology": [
+              "Vue/Vuex/VueRouter",
+              "Tachyons",
+              "Animate.css",
+              "Browserify",
+              "PostCSS",
+              "Tape",
+              "Babel",
+              "ESLint",
+              "NodeJS/NPM",
+              "git"
+            ],
+            "tasks": [
+              "Single page application for managing/updating project metadata",
+              "API integration/CRUD operations for dynamic rendering based on provided JSON schema and user interaction",
+              "User authentication/access"
+            ]
+          },
+          {
+            "name": "Web Application",
+            "technology": [
+              "Choo",
+              "Browserify",
+              "PostCSS",
+              "jQuery",
+              "Bootstrap",
+              "Tape",
+              "jsdom",
+              "Babel",
+              "ESLint",
+              "NodeJS/NPM",
+              "git"
+            ],
+            "tasks": [
+              "Single page application providing bespoke user experience and content",
+              "API integration/CRUD operations for managing user authorization, accreditation, and preferences",
+              "Support existing legacy systems, industry partnerships, and integration of machine learning API",
+              "Technical documentation and testing"
+            ]
+          },
+          {
+            "name": "Internal Command Line Tool",
+            "technology": [
+              "Puppeteer",
+              " NodeJS",
+              " NPM",
+              " Tape",
+              " ESLint",
+              " git"
+            ],
+            "tasks": [
+              "Retrieve and format data from web sources provided by partners to be ingested by machine learning API"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Lead Front End Web Developer",
+        "contract": false,
+        "duration": "June 2015 - August 2017",
+        "startDate": "2015-06",
+        "endDate": "2017-08",
+        "projects": [
+          {
+            "name": "Multimedia UI Component",
+            "technology": [
+              "Yo-yo",
+              " Browserify",
+              " Babel",
+              " Karma/Mocha",
+              " ESLint",
+              " NodeJS/NPM",
+              " git"
+            ],
+            "tasks": [
+              "Lightweight, responsive solution for use on top of legacy websites and as a stand-alone application to dynamically render text, audio, and static image content as multimedia accreditation activity"
+            ]
+          },
+          {
+            "name": "Web Applications",
+            "technology": [
+              "Navigo (client-side routing)",
+              " Handlebars",
+              " Bootstrap/Sass",
+              " jQuery",
+              " Grunt",
+              " Browserify",
+              " Babel",
+              " Karma/Mocha",
+              " ESLint",
+              " NodeJS/NPM",
+              " git"
+            ],
+            "tasks": [
+              "Single page application framework for dynamically rendering content across multiple sites/domains",
+              "API integration/CRUD operations for managing user authorization, accreditation, and preferences",
+              "Support both web browser and hybrid iOS platforms"
+            ]
+          },
+          {
+            "name": "Website",
+            "technology": [
+              "Handlebars",
+              " Browserify",
+              " Bootstrap/Sass",
+              " jQuery",
+              " Grunt",
+              " Babel",
+              " git"
+            ],
+            "tasks": [
+              "Responsive website for submitting queries and rendering responses for use in hybrid iOS app and to showcase @POC’s machine learning API"
+            ]
+          },
+          {
+            "name": "Internal Command Line Tool (NodeJS Middleware)",
+            "technology": ["NodeJS", "git"],
+            "tasks": [
+              "Request large datasets from legacy service and transform into discrete datasets for consumption across multiple platforms and applications"
+            ]
+          }
+        ]
+      },
+      {
+        "title": "Junior Front End Web Developer",
+        "duration": "October 2013 - May 2015",
+        "startDate": "2013-10",
+        "endDate": "2015-05",
+        "projects": [
+          {
+            "name": "User Authentication UI",
+            "technology": ["Bootstrap/Sass", " jQuery", " Web Storage APIs"],
+            "tasks": [
+              "Responsive HTML form for authenticating users across multiple platforms, applications, and websites",
+              "SSO integration for @POC’s partner organizations"
+            ]
+          },
+          {
+            "name": "Media Player UI",
+            "technology": ["Bootstrap/Sass", " jQuery", " HTML5 Media APIs"],
+            "tasks": [
+              "Responsive UI for medical accreditation activities integrating audio, video and static images into multi-media playlists/presentations"
+            ]
+          },
+          {
+            "name": "Web Applications",
+            "technology": ["Bootstrap/CSS/Sass", " jQuery", " HTML"],
+            "tasks": [
+              "Implement and maintain responsive UI across web applications dynamically rendered using a hybrid stack of JavaScript/jQuery and PHP",
+              "Introduce Sass build process to help “componentize” styling of reusable UI elements across web applications"
+            ]
+          }
+        ]
+      }
+    ]
+  }
