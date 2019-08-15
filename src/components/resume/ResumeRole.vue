@@ -6,7 +6,7 @@
   </div>
 </template>
 <script>
-import months from '@/data/months.data.json'
+import months from '../../data/months.data.json'
 const getFullMonth = date => months[date.getMonth()]
 const getFullYear = date => date.getFullYear()
 
@@ -19,11 +19,6 @@ export default {
     'endDate',
     'projects'
   ],
-  data () {
-    return {
-      months
-    }
-  },
   filters: {
     fullDate (string) {
       const date = new Date(string)

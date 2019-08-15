@@ -9,7 +9,7 @@ import PostList from '../PostList.vue'
 // setting up tests for more complex components I may add
 // to the site in future
 
-test('renders as expected', assert => {
+test('PostList renders as expected', assert => {
   const post = {
     title: 'foobarbaz',
     description: 'Amet culpa eveniet exercitationem cumque voluptatibus voluptates Aperiam tempore soluta beatae quis nobis deserunt? Ut ut reprehenderit enim ratione inventore Veniam ut omnis nostrum commodi debitis unde Nesciunt laboriosam atque?',
