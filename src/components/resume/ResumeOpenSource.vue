@@ -1,11 +1,12 @@
 <template>
   <li>
-    <h4 class="text-md">{{name | dekebab | uppercaseEach}}</h4>
+    <h4 class="text-md">{{name | dekebab | capitalizeEach}}</h4>
     <a :href="html_url">{{ html_url }}</a>
     <p>{{ description }}</p>
   </li>
 </template>
 <script>
+import { dekebab, capitalizeEach } from '../../lib/text.helpers'
 export default {
   name: 'resume-open-source',
   props: [
@@ -14,15 +15,8 @@ export default {
     'description'
   ],
   filters: {
-    dekebab (string) {
-      return string.replace(/-/g, ' ')
-    },
-    uppercaseEach (string) {
-      return string
-        .split(' ')
-        .map(s => `${s.charAt(0).toUpperCase()}${s.slice(1)}`)
-        .join(' ')
-    }
+    dekebab,
+    capitalizeEach
   }
 }
 </script>
