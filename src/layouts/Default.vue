@@ -12,7 +12,7 @@
           :class="['underline', 'font-light', 'hover:text-gray-500', 'mr-6']">
           {{ link.text | capitalize }}
         </g-link>
-        <a href="https://github.com/earthtone" class="['underline', 'font-light', 'hover:text-gray-500']">Github</a>
+        <a href="https://github.com/earthtone" :class="['underline', 'font-light', 'hover:text-gray-500']">Github</a>
       </nav>
     </header>
     <slot/>
