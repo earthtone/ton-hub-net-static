@@ -2,7 +2,7 @@
   <Layout id="home-page" class="text-red-300 h-screen">
     <transition enter-active-class="animated fadeIn">
       <div v-if="display" class="px-6 max-w-3 mx-auto md:px-12 flex flex-col justify-center h-full -mt-12">
-        <p class="text-2xl md:text-3xl lg:text-5xl font-hairline font-serif leading-tight">{{ name }}</p>
+        <p class="text-2xl md:text-3xl lg:text-5xl font-hairline font-serif leading-none">{{ name }}</p>
         <p class="title-text md:text-md font-hairline self-end">{{title}}</p>
       </div>
     </transition>
@@ -10,18 +10,25 @@
 </template>
 
 <script>
+import { value, onMounted } from 'vue-function-api'
+
 export default {
-  data () {
+  setup () {
+    const name = value('Tonio Hubilla')
+    const title = value('Javascript Developer')
+    const display = value(false)
+
+    onMounted(() => {
+      setTimeout(() => {
+        display.value = true
+      }, 500)
+    })
+
     return {
-      name: 'Tonio Hubilla',
-      title: 'JavaScript Developer',
-      display: false
+      name,
+      title,
+      display
     }
-  },
-  mounted () {
-    setTimeout(() => {
-      this.display = true
-    }, 500)
   }
 }
 </script>
@@ -41,10 +48,10 @@ export default {
 }
 
 .title-text {
-  transition: transform 800ms ease-in-out;
+  transition: transform 1500ms ease-in-out;
 }
 
 .title-text:hover {
-  transform: scale(1.5) rotate(10deg);
+  transform: rotate(10deg);
 }
 </style>

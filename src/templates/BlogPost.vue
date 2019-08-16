@@ -29,14 +29,14 @@ query BlogPost ($path: String!) {
   }
 
   /deep/ .post-content article h1 {
-    @apply text-xl leading-none; 
+    @apply text-xl leading-none;
   }
 
   /deep/ .post-content article h2 {
-    @apply text-lg leading-tight; 
+    @apply text-lg leading-tight;
   }
 
   /deep/ .post-content article h3 {
-    @apply uppercase; 
+    @apply uppercase;
   }
 </style>

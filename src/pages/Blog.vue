@@ -15,19 +15,19 @@
 </template>
 
 <script>
+import { value } from 'vue-function-api'
 import PostList from '@/components/PostList'
 export default {
   components: {
     PostList
   },
-  data () {
-    return {
-      title: 'Six Impossible Things',
-      subtitle: 'Before Breakfast'
-    }
-  },
   metaInfo: {
-    subtitle: 'A simple blog'
+    description: 'A simple blog'
+  },
+  setup () {
+    const title = value('Six Impossible Things')
+    const subtitle = value('Before Breakfast')
+    return { title, subtitle }
   }
 }
 </script>

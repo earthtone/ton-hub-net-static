@@ -1,5 +1,8 @@
 <template>
   <Layout id="resume-page">
+    <g-link slot="logo" to="/" :class="['link', 'pl-3', 'text-black']">
+      &larr; Go Back
+    </g-link>
     <div class="resume flex flex-wrap justify-between md:p-12 font-hairline">
       <h1 class="w-full md:w-2/3 flex-basis p-3 text-xl md:text-2xl leading-tight">{{ name }}</h1>
       <resume-address v-bind="address" />
@@ -92,10 +95,11 @@ jobs: allCompanyJob (sortBy: "node.startDate" order: ASC) {
 </page-query>
 
 <script>
-import address from '@/data/address.data.json'
-import education from '@/data/education.data.json'
+import { value } from 'vue-function-api'
+import addressData from '@/data/address.data.json'
+import educationData from '@/data/education.data.json'
 import socialLinks from '@/data/social-links.data.json'
-import statement from '@/data/statement.data.json'
+import statementData from '@/data/statement.data.json'
 
 import ResumeAddress from '@/components/resume/ResumeAddress.vue'
 import ResumeEducation from '@/components/resume/ResumeEducation.vue'
@@ -113,12 +117,18 @@ export default {
     ResumeProject,
     ResumeOpenSource
   },
-  data () {
+  setup () {
+    const address = value(addressData)
+    const education = value(educationData)
+    const statement = value(statementData)
+    const links = value(socialLinks)
+    const name = value('Tonio Hubilla')
+
     return {
-      name: 'Tonio Hubilla',
+      name,
       address,
       education,
-      links: socialLinks,
+      links,
       statement
     }
   }
