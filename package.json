@@ -12,10 +12,13 @@
     "test": "ava"
   },
   "dependencies": {
+    "@earthtone/prisoner-ipsum": "^1.1.2",
+    "@earthtone/xkcd-password": "^1.0.0",
     "animate.css": "^3.7.2",
     "axios": "^0.19.0",
     "gridsome": "^0.6.0",
     "ramda": "^0.26.1",
+    "tone": "^13.8.25",
     "vue-function-api": "^2.1.2"
   },
   "devDependencies": {
