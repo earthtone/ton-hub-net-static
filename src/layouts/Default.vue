@@ -1,10 +1,18 @@
 <template>
-  <main :class="['layout', 'font-sans']">
-    <header :class="['flex', 'justify-between', 'pr-3', 'pt-3']">
+  <main :class="['layout', 'font-sans', 'text-gray-900']">
+    <header :class="['flex', 'justify-between', 'px-3']">
       <slot name="logo">
         <span></span>
       </slot>
-        <nav :class="['bg-white', 'text-black', 'border-black', 'border-solid', 'border', 'px-6', 'py-1']">
+        <nav :class="[
+          'bg-white',
+          'border-black',
+          'border-solid',
+          'border-4',
+          'px-6',
+          'py-1',
+          'z-10',
+          'mt-3']">
         <g-link
           v-for="link in navLinks"
           :key="link.text"

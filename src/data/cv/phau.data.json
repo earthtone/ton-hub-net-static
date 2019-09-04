@@ -2,6 +2,8 @@
   "name": "Pizza Hut Australia",
   "website": "https://pizzahut.com.au",
   "location": "Macquarie Park, NSW AU",
+  "startDate": "2018-08",
+  "endDate": "2018-06",
   "positions": [
     {
       "title": "Front End Web Developer",

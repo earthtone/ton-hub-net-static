@@ -1,6 +1,6 @@
 <template>
   <Layout id="resume-page">
-    <g-link slot="logo" to="/" :class="['link', 'pl-3', 'text-black']">
+    <g-link slot="logo" to="/" :class="['link', 'pl-3', 'text-black', 'mt-6']">
       &larr; Go Back
     </g-link>
     <div class="resume flex flex-wrap justify-between md:p-12 font-hairline">
@@ -42,7 +42,7 @@
 
 <page-query>
 query {
-jobs: allCompanyJob (sortBy: "node.startDate" order: ASC) {
+jobs: allCompanyJob (sortBy: "endDate" order: DESC) {
     totalCount
     edges {
       node {
@@ -51,6 +51,8 @@ jobs: allCompanyJob (sortBy: "node.startDate" order: ASC) {
         name
         website
         location
+        startDate
+        endDate
         positions {
           title
           contract
@@ -69,7 +71,7 @@ jobs: allCompanyJob (sortBy: "node.startDate" order: ASC) {
   repos: allOssProject (
     filter: {
       # hardcode specific repos to showcase
-      id: { in: ["125383251", "187361149", "158930980"] }
+      id: { in: ["125383251", "187361149", "158930980", "203898230"] }
     }
     sortBy: "node.updated_at"
     order: DESC
