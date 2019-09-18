@@ -41,7 +41,7 @@
     </div>
     <div class="h-screen w-full flex justify-center items center flex-col px-12 bg-black text-white py-64 lg:my-0">
       <h1 class="text-2xl md:text-3xl leading-none">
-        Keep the world strange.
+          Keep the world strang<span class="tilted">e</span>.
       </h1>
       <h2 class="text-lg md:text-2xl leading-none">
         Keep the web weird.
@@ -53,7 +53,7 @@
 <script>
 import Hero from '@/components/home/Hero.vue'
 import Quotation from '@/components/home/Quotation.vue'
-import { value } from 'vue-function-api'
+import { ref } from '@vue/composition-api'
 
 export default {
   components: {
@@ -61,8 +61,8 @@ export default {
     Quotation
   },
   setup (_, context) {
-    const name = value('Tonio Hubilla')
-    const title = value('Javascript Developer')
+    const name = ref('Tonio Hubilla')
+    const title = ref('Javascript Developer')
     return {
       name,
       title

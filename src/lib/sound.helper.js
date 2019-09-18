@@ -11,7 +11,7 @@ export const scale = [
   523.25
 ]
 
-export const playNote = (frq, ctx) => {
+export const playNote = ctx => frq => {
   const note = new Sound(ctx)
   const now = ctx.currentTime
   note.play(frq, now + 0.25)

@@ -35,6 +35,13 @@ module.exports = {
       typeName: 'CompanyJob',
       json: {}
     }
+  }, {
+    use: '@gridsome/source-filesystem',
+    options: {
+      path: 'src/components/lab/**/*.vue',
+      typeName: 'CodeLab',
+      route: '/lab/:fileInfo__name'
+    }
   }],
   css: {
     loaderOptions: {

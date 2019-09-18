@@ -42,7 +42,7 @@
 
 <page-query>
 query {
-jobs: allCompanyJob (sortBy: "endDate" order: DESC) {
+jobs: allCompanyJob (sortBy: "endDate" order: ASC) {
     totalCount
     edges {
       node {
@@ -97,18 +97,14 @@ jobs: allCompanyJob (sortBy: "endDate" order: DESC) {
 </page-query>
 
 <script>
-import { value } from 'vue-function-api'
-import addressData from '@/data/address.data.json'
-import educationData from '@/data/education.data.json'
-import socialLinks from '@/data/social-links.data.json'
-import statementData from '@/data/statement.data.json'
-
 import ResumeAddress from '@/components/resume/ResumeAddress.vue'
 import ResumeEducation from '@/components/resume/ResumeEducation.vue'
 import ResumeCompany from '@/components/resume/ResumeCompany.vue'
 import ResumeRole from '@/components/resume/ResumeRole.vue'
 import ResumeProject from '@/components/resume/ResumeProject.vue'
 import ResumeOpenSource from '@/components/resume/ResumeOpenSource.vue'
+
+import { usePersonalData } from '@/lib/resume.setup'
 
 export default {
   components: {
@@ -120,18 +116,9 @@ export default {
     ResumeOpenSource
   },
   setup () {
-    const address = value(addressData)
-    const education = value(educationData)
-    const statement = value(statementData)
-    const links = value(socialLinks)
-    const name = value('Tonio Hubilla')
-
+    const details = usePersonalData()
     return {
-      name,
-      address,
-      education,
-      links,
-      statement
+      ...details
     }
   }
 }

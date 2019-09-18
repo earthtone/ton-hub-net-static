@@ -9,14 +9,18 @@
       </h4>
     </header>
     <section class="posts mx-auto lg:max-w-2xl">
-      <PostList v-for="edge in $page.allBlogPost.edges" :key="edge.node.id" :post="edge.node" class="my-8" />
+      <PostList
+        v-for="edge in $page.allBlogPost.edges"
+        :key="edge.node.id"
+        :post="edge.node"
+        class="my-8" />
     </section>
   </Layout>
 </template>
 
 <script>
-import { value } from 'vue-function-api'
-import PostList from '@/components/PostList'
+import { ref } from '@vue/composition-api'
+import PostList from '@/components/lists/PostList'
 export default {
   components: {
     PostList
@@ -25,8 +29,8 @@ export default {
     description: 'A simple blog'
   },
   setup () {
-    const title = value('Six Impossible Things')
-    const subtitle = value('Before Breakfast')
+    const title = ref('Six Impossible Things')
+    const subtitle = ref('Before Breakfast')
     return { title, subtitle }
   }
 }

@@ -4,26 +4,18 @@
       <slot name="logo">
         <span></span>
       </slot>
-        <nav :class="[
-          'bg-white',
-          'border-black',
-          'border-solid',
-          'border-4',
-          'px-6',
-          'py-1',
-          'z-10',
-          'mt-3']">
-        <g-link
-          v-for="link in navLinks"
-          :key="link.text"
-          :to="link.path"
-          :class="['underline', 'font-light', 'hover:text-gray-500', 'mr-6']">
-          {{ link.text | capitalize }}
-        </g-link>
-        <a href="https://github.com/earthtone" :class="['underline', 'font-light', 'hover:text-gray-500']">Github</a>
-      </nav>
+      <nav-list
+        class="hidden lg:block bg-white border-4 border-gray-900 underline z-10 px-3 py-2 my-3 lg:mr-3"
+        :internalLinks="navLinks"
+        :externalLinks="socialLinks" />
     </header>
     <slot/>
+    <footer v-if="$route.name === 'home'" class="h-screen lg:hidden p-24 bg-gray-900 text-white">
+      <nav-list
+        class="flex flex-col h-full justify-between text-lg underline"
+        :internalLinks="navLinks"
+        :externalLinks="socialLinks"/>
+    </footer>
   </main>
 </template>
 <static-query>
@@ -36,8 +28,23 @@
 <script>
 import { makeNavData } from '../lib/navigation.helpers'
 import { capitalize } from '../lib/text.helpers'
+import NavList from '@/components/lists/NavList.vue'
 
 export default {
+  components: {
+    NavList
+  },
+  data () {
+    return {
+      socialLinks: [{
+        path: 'https://github.com/earthtone',
+        text: 'Github'
+      }, {
+        path: 'https://www.linkedin.com/in/tonio-hubilla-113840a3/',
+        text: 'LinkedIn'
+      }]
+    }
+  },
   computed: {
     navLinks () {
       return makeNavData(this.$static.pages)
