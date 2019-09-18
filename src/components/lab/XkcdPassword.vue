@@ -8,7 +8,7 @@
 </template>
 
 <script>
-// import xkcdPassword from '@earthtone/xkcd-password'
+import xkcdPassword from '@earthtone/xkcd-password'
 
 export default {
   data () {
@@ -21,7 +21,7 @@ export default {
   },
   methods: {
     makePassword () {
-      // this.password = xkcdPassword().join(' ')
+      this.password = xkcdPassword().join(' ')
     }
   }
 }
@@ -34,7 +34,7 @@ export default {
 }
 
 .password-container h1 {
-  @apply text-5xl text-white font-hairline my-8;
+  @apply text-3xl font-hairline my-8;
   text-align: center;
 }
 

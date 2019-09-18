@@ -1,20 +1,19 @@
 <template>
   <section>
-    <h1>Eno Isms</h1>
+    <h1 class="text-4xl mx-6 font-hairline">eno.ism(s)</h1>
+    <div class="flex w-full h-full flex-col items-center md:flex-row">
+      <a href="https://earthtone.neocities.org/lab/discreet-music-clone" class="w-1/2 m-12">
+        <g-image src="~/assets/img/discreet-music-cover-cutout.png" class="object-cover h-64 w-full" />
+      </a>
+      <a href="https://earthtone.neocities.org/lab/music-for-airports-clone" class="w-1/2 m-12">
+        <g-image src="~/assets/img/ambient-1-Inlay.jpg" class="object-cover h-64 w-full" />
+      </a>
+    </div>
   </section>
 </template>
 <script>
-import Tone, { Transport, Loop, Panner, FeedbackDelay } from 'tone'
-import { makeSynth, scoreA, scoreB } from '@/lib/discreet-music'
 
 export default {
-  name: 'eno-isms',
-  setup () {
-    const synths = [makeSynth(), makeSynth()]
-    const panners = [new Panner(-0.5), new Panner(0.5)]
-
-    const echo = new FeedbackDelay('16n', 0.6)
-
-  }
+  name: 'eno-isms'
 }
 </script>
