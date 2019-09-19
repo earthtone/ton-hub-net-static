@@ -1,29 +1,32 @@
 <template>
-  <main class="app">
-    <h1>Use Your Mouse!</h1>
-    <svg
-      :width="dimensions[0]"
-      :height="dimensions[1]"
-      @click="generate">
-      <transition-group
-        tag="g"
-        name="fade">
-        <circle
-          v-for="point in points"
-          :key="point.id"
-          :cx="point.position[0]"
-          :cy="point.position[1]"
-          :r="point.radius"
-          :stroke="point.stroke ? point.stroke : '#fff'"
-          :fill="point.fill ? point.fill : '#fff'"
-          :fill-opacity="point.fill ? 1 : 0"
-          :stroke-opacity="point.fill ? 0 : 1"
-          @mouseover="playNote(point.freq)"/>
-      </transition-group>
-    </svg>
-  </main>
+  <section class="app">
+    <ClientOnly>
+      <h1>Use Your Mouse!</h1>
+      <svg
+        :width="dimensions[0]"
+        :height="dimensions[1]"
+        @click="generate">
+        <transition-group
+          tag="g"
+          name="fade">
+          <circle
+            v-for="point in points"
+            :key="point.id"
+            :cx="point.position[0]"
+            :cy="point.position[1]"
+            :r="point.radius"
+            :stroke="point.stroke ? point.stroke : '#fff'"
+            :fill="point.fill ? point.fill : '#fff'"
+            :fill-opacity="point.fill ? 1 : 0"
+            :stroke-opacity="point.fill ? 0 : 1"
+            @mouseover="playNote(point.freq)"/>
+        </transition-group>
+      </svg>
+    </ClientOnly>
+  </section>
 </template>
 <script>
+import { onMounted, reactive } from '@vue/composition-api'
 import { useAudioGrid } from '@/lib/glocken-spool.setup'
 export default {
   name: 'glocken-spool',
@@ -38,10 +41,14 @@ export default {
     }
   },
   setup (props) {
-    const data = useAudioGrid(props)
-    console.log(data)
+    let vm = reactive({})
+
+    onMounted(() => {
+      vm = useAudioGrid(props)
+    })
+
     return {
-      ...data
+      ...vm
     }
   }
 }
