@@ -7,7 +7,7 @@
     "explore": "gridsome explore",
     "lint:js": "eslint .",
     "lint:yaml": "yamllint ./**/*.yml",
-    "lint": "npm run lint:js && npm run lint:yaml",
+    "lint": "npm run lint:js",
     "pretest": "npm run lint",
     "test": "ava"
   },
