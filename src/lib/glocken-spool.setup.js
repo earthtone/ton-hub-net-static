@@ -11,11 +11,13 @@ export function useAudioGrid (props) {
   const palette = ref(random.pick(palettes))
   const audio = ref(null)
   const scale = ref(scaleData)
-  if (!window) {
+
+  if (window) {
+    audio.value = new (window.AudioContext || window.webkitAudioContext)()
+  } else {
+    console.log('no window')
     return
   }
-
-  audio.value = new (window.AudioContext || window.webkitAudioContext)()
 
   generate()
 
