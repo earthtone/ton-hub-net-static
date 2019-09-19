@@ -3,6 +3,7 @@
     <div class="password-container">
       <h1>{{ password }}</h1>
       <button @click="makePassword">Generate</button>
+      <a href="https://github.com/earthtone/xkcd-password-generator" class="hover:underline mt-24">Code</a>
     </div>
   </main>
 </template>

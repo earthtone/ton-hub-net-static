@@ -22,6 +22,10 @@
           number of sentences per paragraph
         </label>
         <button class="bg-gray-100 text-gray-900 p-3 w-full" type="submit">Be seeing you</button>
+				<div class="flex justify-apart">
+          <a href="https://github.com/earthtone/prisoner-ipsum" class="m-6 underline">Module Code</a>
+          <a href="https://github.com/earthtone/prisoner-ipsum-api" class="m-6 underline">API Code</a>
+        </div>
       </form>
       <ipsum-provider :paragraphs="paragraphs" :sentences="sentences">
         <template v-slot="{text, loading}">

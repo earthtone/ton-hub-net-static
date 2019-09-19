@@ -6,6 +6,7 @@
       </slot>
       <nav-list
         class="hidden lg:block bg-white border-4 border-gray-900 underline z-10 px-3 py-2 my-3 lg:mr-3"
+        :class="{'md:block': $route.name !== 'home'}"
         :internalLinks="navLinks"
         :externalLinks="socialLinks" />
     </header>

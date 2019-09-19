@@ -1,6 +1,6 @@
 <template>
   <Layout>
-    <section>
+    <section class="flex flex-col md:flex-row">
       <lab-list v-for="lab in $page.allCodeLab.edges" :key="lab.id" v-bind="lab.node" />
     </section>
   </Layout>

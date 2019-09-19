@@ -20,8 +20,9 @@ module.exports = {
   plugins: [{
     use: '@gridsome/source-filesystem',
     options: {
-      path: 'blog/**/*.md',
+      path: 'src/blog/**/*.md',
       typeName: 'BlogPost',
+      route: '/blog/:fileInfo__name',
       remark: {
         externalLinksTarget: '_blank',
         externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
