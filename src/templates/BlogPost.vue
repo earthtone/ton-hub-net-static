@@ -24,19 +24,35 @@ query BlogPost ($path: String!) {
 </page-query>
 
 <style scoped>
-  /deep/ .post-content article p {
-    @apply py-3;
-  }
+/deep/ .post-content article p {
+  @apply py-3;
+}
 
-  /deep/ .post-content article h1 {
-    @apply text-xl leading-none; 
-  }
+/deep/ .post-content article h1 {
+  @apply text-xl leading-none;
+}
 
-  /deep/ .post-content article h2 {
-    @apply text-lg leading-tight; 
-  }
+/deep/ .post-content article h2 {
+  @apply text-lg font-sans;
+}
 
-  /deep/ .post-content article h3 {
-    @apply uppercase; 
-  }
+/deep/ .post-content article h3 {
+  @apply uppercase;
+}
+
+/deep/ .post-content a {
+  @apply underline;
+}
+
+/deep/ .post-content hr {
+  @apply my-8;
+}
+
+/deep/ .post-content blockquote {
+  @apply font-mono py-8 px-6 my-6 border-l border-gray-900 bg-gray-300;
+}
+
+/deep/ .post-content p > img {
+  @apply w-full;
+}
 </style>
