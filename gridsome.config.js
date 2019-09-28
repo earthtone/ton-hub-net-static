@@ -16,6 +16,7 @@ if (process.env.NODE_ENV === 'production') {
 
 module.exports = {
   siteName: 'Tonio Hubilla',
+  siteUrl: 'https://ton-hub.net',
   titleTemplate: '%s',
   plugins: [{
     use: '@gridsome/source-filesystem',
@@ -42,6 +43,27 @@ module.exports = {
       path: 'src/components/lab/**/*.vue',
       typeName: 'CodeLab',
       route: '/lab/:fileInfo__name'
+    }
+  }, {
+    use: 'gridsome-plugin-feed',
+    options: {
+      contentTypes: ['BlogPost'],
+      feedOptions: {
+        title: 'Six Impossible Things',
+        description: 'Musings and ramblings',
+      },
+      rss: {
+        enabled: true,
+        output: '/feed.xml'
+      },
+      atom: {
+        enabled: true,
+        output: '/feed.atom'
+      },
+      json: {
+        enabled: true,
+        output: '/feed.json'
+      }
     }
   }],
   css: {
