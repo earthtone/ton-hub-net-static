@@ -50,7 +50,7 @@ module.exports = {
       contentTypes: ['BlogPost'],
       feedOptions: {
         title: 'Six Impossible Things',
-        description: 'Musings and ramblings',
+        description: 'Musings and ramblings'
       },
       rss: {
         enabled: true,
