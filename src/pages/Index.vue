@@ -47,6 +47,17 @@
         Keep the web weird.
       </h2>
     </div>
+    <div class="h-screen w-full flex justify-center items center flex-col px-12 bg-blue-900 text-white py-64 lg:my-0">
+      <p class="text-center">
+      This site is a <a href="https://jamstack.org" class="underline">JAMStack site</a> built with <span role="img">🔥</span> using <a class="underline" href="https://gridsome.org">Gridsome</a> &amp; <a class="underline" href="https://tailwindcss.com">Tailwind</a>.
+      </p>
+      <p class="text-center">
+      It is automatically audited as per <a href="https://a11yproject.com/" class="underline">a11y guidlines</a> using <a class="underline" href="https://eslint.org">eslint</a> and its <a class="underline" href="https://github.com/kevva/eslint-plugin-jsx-a11y">plugin ecosystem</a>.
+      </p>
+      <p class="text-center">
+      It is hosted on both the standard web using <a class="underline" href="https://aws.amazon.com">AWS</a> and the <a class="underline" href="dat://earthtone.hashbase.io">decentralized web</a> using <a class="underline" href="https://hashbase.io">Hashbase</a>.
+      </p>
+    </div>
   </Layout>
 </template>
 
