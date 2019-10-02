@@ -4,6 +4,10 @@
     "id": "website"
   },
   {
+    "url": "dat://earthtone.hashbase.io",
+    "id": "datsite"
+  },
+  {
     "url": "https://github.com/earthtone",
     "id": "github"
   },
