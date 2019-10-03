@@ -37,7 +37,7 @@ query BlogPost ($path: String!) {
 }
 
 /deep/ .post-content article h3 {
-  @apply uppercase;
+  @apply uppercase font-sans font-thin;
 }
 
 /deep/ .post-content a {
@@ -54,5 +54,9 @@ query BlogPost ($path: String!) {
 
 /deep/ .post-content p > img {
   @apply w-full;
+}
+
+/deep/ .post-content iframe {
+  @apply mt-6 mb-12;
 }
 </style>
