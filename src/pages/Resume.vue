@@ -8,9 +8,7 @@
       <resume-address v-bind="address" />
       <div class="w-full md:w-2/3 max-w-4xl flex-basis p-6 md:mt-8">
         <h3 class="text-blue-500 uppercase text-lg mb-3">personal statement</h3>
-        <p class="pt-3 font-thin">
-          {{ statement.text }}
-        </p>
+        <article class="pt-3 font-thin" v-html="$page.statement.content"/>
       </div>
       <resume-education v-bind="education" />
       <div class="companies w-full md:w-2/3 p-6 max-w-4xl">
@@ -42,7 +40,11 @@
 
 <page-query>
 query {
-jobs: allCompanyJob (sortBy: "endDate" order: ASC) {
+  statement: personalStatement (id: "b2e9bce2f8d9b59b2e5c359a3cae9742") {
+    content
+  }
+
+  jobs: allCompanyJob (sortBy: "startDate" order: DESC) {
     totalCount
     edges {
       node {
@@ -113,7 +115,7 @@ export default {
     ResumeCompany,
     ResumeRole,
     ResumeProject,
-    ResumeOpenSource
+    ResumeOpenSource,
   },
   setup () {
     const details = usePersonalData()
@@ -127,5 +129,8 @@ export default {
 <style scoped>
 /deep/ a {
   @apply text-blue-700 underline;
+}
+/deep/ article p {
+  @apply mb-6;
 }
 </style>
