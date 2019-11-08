@@ -4,5 +4,5 @@ const getFullYear = date => date.getFullYear()
 
 export const fullDate = string => {
   const date = new Date(string)
-  return `${getFullMonth(date)} ${getFullYear(date)}`
+  return !string ? 'present' : `${getFullMonth(date)} ${getFullYear(date)}`
 }

@@ -33,6 +33,17 @@ module.exports = {
   }, {
     use: '@gridsome/source-filesystem',
     options: {
+      path: 'src/data/personal-statement.md',
+      typeName: 'PersonalStatement',
+      remark: {
+        externalLinksTarget: '_blank',
+        externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
+        plugins: ['@gridsome/remark-prismjs']
+      }
+    }
+  }, {
+    use: '@gridsome/source-filesystem',
+    options: {
       path: 'src/data/cv/*.json',
       typeName: 'CompanyJob',
       json: {}

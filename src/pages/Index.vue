@@ -29,7 +29,7 @@
       <h3 class="text-2xl self-start text-white pb-3">I believe in people...</h3>
       <article class="-mx-6 md:mt-32 max-w-3xl text-md text-gray-700 bg-white border-gray-900 border-8 p-6">
         <p>
-        Human beings are wildly inefficent, unpredictable, and generally "weird". We do ridiculous things simply for the sake of doing them. We rarely say what we mean, and even more rarely mean what we say. We are often cruel and we are often kind. We are full of reckless, unbridled curiosity. We sometimes watch David Lynch movies without understanding what they're really about. We are capable of so much, and almost always fall short of our own potential. We are absurd and we are silly.
+        Human beings are wildly inefficent, unpredictable, and generally "weird". We do ridiculous things simply for the sake of doing them. We rarely say what we mean, and even more rarely mean what we say. We are often cruel and we are often kind. We are full of wreckless, unbridled curiosity. We sometimes watch David Lynch movies without understanding what they're really about. We are capable of so much, and almost always fall short of our own potential. We are absurd and we are silly.
         </p>
         <p class="mt-6">
           I believe in the power and the profundity of all this. I belive art should celbrate the incongruous and the inane. I belive communites and networks should foster  the unpredictable instead of trying to tame it and control it. I belive that technology can help us become <span class="italic">better humans</span> instead of encouraging us to become <span class="italic">less human</span>.
