@@ -10,7 +10,7 @@ module.exports = function (api) {
   api.loadSource(async store => {
     // Use the Data Store API here: https://gridsome.org/docs/data-store-api
     const { data } = await axios.get('https://api.github.com/users/earthtone/repos?per_page=100')
-    const contentType = store.addContentType({
+    const contentType = store.addCollection({
       typeName: 'OssProject'
     })
 

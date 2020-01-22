@@ -1,14 +1,14 @@
 <template>
   <Layout id="blog-page" class="px-3">
-    <header class="header mx-auto lg:max-w-3xl my-12">
-      <h1 class="font-serif text-xl md:text-2xl leading-tight">
+    <header class="mx-auto my-12 header lg:max-w-3xl">
+      <h1 class="font-serif text-xl leading-tight md:text-2xl">
         {{ title }}
       </h1>
-      <h4 class="leading-none mb-12 lg:pl-3 md:text-lg">
+      <h4 class="mb-12 leading-none lg:pl-3 md:text-lg">
         {{ subtitle }}
       </h4>
     </header>
-    <section class="posts mx-auto lg:max-w-2xl">
+    <section class="mx-auto posts lg:max-w-2xl">
       <PostList
         v-for="edge in $page.allBlogPost.edges"
         :key="edge.node.id"
@@ -38,7 +38,7 @@ export default {
 
 <page-query>
 query {
-  metaData {
+  metadata {
     siteName
     siteDescription
   }

@@ -1,14 +1,14 @@
 <template>
-  <div class="island h-full min-h-screen text-gray-100 flex flex-col md:flex-row pt-16 px-4 md:inset-0 md:absolute">
-    <div class="flex flex-col md:flex-row max-w-6xl mx-auto pt-10">
+  <div class="flex flex-col h-full min-h-screen px-4 pt-16 text-gray-100 island md:flex-row md:inset-0 md:absolute">
+    <div class="flex flex-col max-w-6xl mx-auto md:pt-10 md:flex-row">
       <form
-        class="parameter-container order-1 ml-6 mb-6"
-        @submit.prevent="makeIpsum">
+        class="order-1 md:mb-6 md:ml-6 parameter-container"
+        @submit.prevent="getData">
         <label for="paraLength" class="flex flex-col my-3 text-gray-300">
           <input
             id="paraLength"
-            class="text-gray-900 p-3 w-full"
-            v-model="paraLength"
+            class="w-full p-3 text-gray-900"
+            v-model="paragraphs"
             type="number"
             min="1">
           number of paragraphs
@@ -16,57 +16,69 @@
         <label for="wordLength" class="flex flex-col mb-3 text-gray-300">
           <input
             id="sentenceLength"
-            class="text-gray-900 p-3 w-full"
-            v-model="sentenceLength"
+            class="w-full p-3 text-gray-900"
+            v-model="sentences"
             type="number">
           number of sentences per paragraph
         </label>
-        <button class="bg-gray-100 text-gray-900 p-3 w-full" type="submit">Be seeing you</button>
-				<div class="flex justify-apart">
-          <a href="https://github.com/earthtone/prisoner-ipsum" class="m-6 underline">Module Code</a>
-          <a href="https://github.com/earthtone/prisoner-ipsum-api" class="m-6 underline">API Code</a>
+        <button
+          class="w-full p-3 text-gray-900 bg-gray-100"
+          type="submit">
+          Be seeing you
+        </button>
+        <div class="flex justify-apart">
+          <a href="https://github.com/earthtone/prisoner-ipsum" class="m-6 underline">
+            Module Code
+          </a>
+          <a href="https://github.com/earthtone/prisoner-ipsum-api" class="m-6 underline">
+            API Code
+          </a>
         </div>
       </form>
-      <ipsum-provider :paragraphs="paragraphs" :sentences="sentences">
-        <template v-slot="{text, loading}">
-          <article v-if="!loading" class="overflow-scroll bg-transparent max-w-xl">
-            <p v-for="(paragraph, index) in text" :key="index" class="mb-6">
-              {{ paragraph }}
-            </p>
-          </article>
-          <article v-else>
-            <h3 class="text-2xl">Be seing you...</h3>
-          </article>
-        </template>
-      </ipsum-provider>
+      <article v-if="!loading" class="max-w-xl overflow-y-scroll bg-transparent">
+        <p v-for="(paragraph, index) in text" :key="index" class="mb-6">
+          {{ paragraph }}
+        </p>
+      </article>
+      <article v-else>
+        <h3 class="text-2xl">Be seing you...</h3>
+      </article>
     </div>
   </div>
 </template>
 <script>
-import IpsumProvider from '@/components/data-providers/PrisonerIpsumProvider.vue'
-
-const normalize = s =>
-  typeof s === 'string'
-    ? parseInt(s.trim())
-    : parseInt(s)
-
 export default {
-  components: {
-    IpsumProvider
-  },
   data () {
     return {
-      paraLength: 1,
-      sentenceLength: 5,
+      loading: true,
       paragraphs: 1,
-      sentences: 5
+      sentences: 5,
+      text: ''
+    }
+  },
+  computed: {
+    url () {
+      return `https://mj7cp02g0a.execute-api.us-east-1.amazonaws.com/dev/?p=${this.paragraphs}&s=${this.sentences}`
     }
   },
   methods: {
-    makeIpsum () {
-      this.paragraphs = normalize(this.paraLength)
-      this.sentences = normalize(this.sentenceLength)
+    async getData () {
+      console.log('getting data...')
+      this.loading = true
+
+      try {
+        const req = await fetch(this.url)
+        const res = await req.json()
+        this.text = res.data
+        console.log('got em', this.text)
+        this.loading = false
+      } catch (err) {
+        console.error(err)
+      }
     }
+  },
+  mounted () {
+    this.getData()
   }
 }
 </script>
