@@ -1,11 +1,11 @@
 <template>
   <Layout class="px-6 py-3">
     <g-link slot="logo" to="/blog" class="link">  &larr; Go Back</g-link>
-    <div class="post-title lg:max-w-2xl mx-auto">
+    <div class="mx-auto post-title lg:max-w-2xl">
       <h1 class="text-xl">{{$page.post.title}}</h1>
-      <h6 class="post-date uppercase mb-3 pl-3 font-hariline"> {{$page.post.date}} | {{$page.post.timeToRead}} min read</h6>
+      <h6 class="pl-3 mb-3 uppercase post-date font-hariline"> {{$page.post.date}} | {{$page.post.timeToRead}} min read</h6>
     </div>
-    <div class="post-content  md:max-w-2xl mx-auto lg:px-12">
+    <div class="mx-auto post-content md:max-w-2xl lg:px-12">
       <article v-html="$page.post.content" class="md:font-serif" />
     </div>
   </Layout>
