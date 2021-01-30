@@ -49,13 +49,6 @@ module.exports = {
       json: {}
     }
   }, {
-    use: '@gridsome/source-filesystem',
-    options: {
-      path: 'src/components/lab/**/*.vue',
-      typeName: 'CodeLab',
-      route: '/lab/:fileInfo__name'
-    }
-  }, {
     use: 'gridsome-plugin-feed',
     options: {
       contentTypes: ['BlogPost'],
