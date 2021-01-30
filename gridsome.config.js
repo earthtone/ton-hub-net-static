@@ -21,18 +21,6 @@ module.exports = {
   plugins: [{
     use: '@gridsome/source-filesystem',
     options: {
-      path: 'src/blog/**/*.md',
-      typeName: 'BlogPost',
-      route: '/blog/:fileInfo__name',
-      remark: {
-        externalLinksTarget: '_blank',
-        externalLinksRel: ['nofollow', 'noopener', 'noreferrer'],
-        plugins: ['@gridsome/remark-prismjs']
-      }
-    }
-  }, {
-    use: '@gridsome/source-filesystem',
-    options: {
       path: 'src/data/personal-statement.md',
       typeName: 'PersonalStatement',
       remark: {
@@ -47,34 +35,6 @@ module.exports = {
       path: 'src/data/cv/*.json',
       typeName: 'CompanyJob',
       json: {}
-    }
-  }, {
-    use: '@gridsome/source-filesystem',
-    options: {
-      path: 'src/components/lab/**/*.vue',
-      typeName: 'CodeLab',
-      route: '/lab/:fileInfo__name'
-    }
-  }, {
-    use: 'gridsome-plugin-feed',
-    options: {
-      contentTypes: ['BlogPost'],
-      feedOptions: {
-        title: 'Six Impossible Things',
-        description: 'Musings and ramblings'
-      },
-      rss: {
-        enabled: true,
-        output: '/feed.xml'
-      },
-      atom: {
-        enabled: true,
-        output: '/feed.atom'
-      },
-      json: {
-        enabled: true,
-        output: '/feed.json'
-      }
     }
   }],
   css: {

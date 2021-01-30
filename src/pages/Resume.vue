@@ -3,15 +3,15 @@
     <g-link slot="logo" to="/" :class="['link', 'pl-3', 'text-black', 'mt-6']">
       &larr; Go Back
     </g-link>
-    <div class="resume flex flex-wrap justify-between md:p-12 font-hairline">
-      <h1 class="w-full md:w-2/3 flex-basis p-3 text-xl md:text-2xl leading-tight">{{ name }}</h1>
+    <div class="flex flex-wrap justify-between font-hairline resume md:p-12">
+      <h1 class="w-full p-3 text-xl leading-tight md:w-2/3 flex-basis md:text-2xl">{{ name }}</h1>
       <resume-address v-bind="address" />
-      <div class="w-full md:w-2/3 max-w-4xl flex-basis p-6 md:mt-8">
-        <h3 class="text-blue-500 uppercase text-lg mb-3">personal statement</h3>
+      <div class="w-full max-w-4xl p-6 md:w-2/3 flex-basis md:mt-8">
+        <h3 class="mb-3 text-lg text-blue-500 uppercase">personal statement</h3>
         <article class="pt-3 font-thin" v-html="$page.statement.content"/>
       </div>
       <resume-education v-bind="education" />
-      <div class="companies w-full md:w-2/3 p-6 max-w-4xl">
+      <div class="w-full max-w-4xl p-6 companies md:w-2/3">
         <resume-company v-for="job in $page.jobs.edges" v-bind="job.node"  :key="job.node.id">
           <template #default="{ role }">
             <resume-role v-bind="role">
@@ -22,13 +22,13 @@
           </template>
         </resume-company>
       </div>
-      <div class="w-full md:w-1/3 max-w-lg pt-6 px-3">
+      <div class="w-full max-w-lg px-3 pt-6 md:w-1/3">
         <div class="pl-3 lg:pl-8 md:mt-8">
-          <h3 class="text-blue-500 uppercase text-lg mb-3">web links</h3>
+          <h3 class="mb-3 text-lg text-blue-500 uppercase">web links</h3>
           <a v-for="link in links" :key="link.id" :href="link.url" class="block my-3">{{ link.url }}</a>
         </div>
         <div class="pl-3 lg:pl-8 md:mt-8">
-          <h3 class="text-blue-500 uppercase text-lg mb-3">Open Source</h3>
+          <h3 class="mb-3 text-lg text-blue-500 uppercase">Open Source</h3>
           <ul>
             <resume-open-source v-for="repo in $page.repos.edges" :key="repo.node.id"  v-bind="repo.node" class="my-6"/>
           </ul>
@@ -115,7 +115,7 @@ export default {
     ResumeCompany,
     ResumeRole,
     ResumeProject,
-    ResumeOpenSource,
+    ResumeOpenSource
   },
   setup () {
     const details = usePersonalData()
