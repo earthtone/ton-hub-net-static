@@ -5,10 +5,6 @@
 // To restart press CTRL + C in terminal and run `gridsome develop`
 const tailwind = require('tailwindcss')
 
-const postcssPlugins = [
-  tailwind()
-]
-
 module.exports = {
   siteName: 'Tonio Hubilla',
   siteUrl: 'https://ton-hub.net',
@@ -35,7 +31,7 @@ module.exports = {
   css: {
     loaderOptions: {
       postcss: {
-        plugins: postcssPlugins
+        plugins: [tailwind()]
       }
     }
   }
