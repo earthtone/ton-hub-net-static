@@ -1,5 +1,5 @@
 <template>
-  <Layout id="resume-page">
+  <DefaultLayout id="resume-page">
     <g-link slot="logo" to="/" :class="['link', 'pl-3', 'text-black', 'mt-6']">
       &larr; Go Back
     </g-link>
@@ -35,7 +35,7 @@
         </div>
       </div>
     </div>
-  </Layout>
+  </DefaultLayout>
 </template>
 
 <page-query>

@@ -1,5 +1,5 @@
 <template>
-  <Layout id="home-page" class="h-screen bg-black">
+  <DefaultLayout id="home-page" class="h-screen bg-black">
     <section class="flex justify-start w-full h-full p-0 panel">
       <hero :name="state.name" :title="state.title" class="md:w-1/2 lg:w-1/3">
         <h2 class="pb-4 text-lg font-hairline">
@@ -13,7 +13,7 @@
       author="John Perry Barlow"
       sourceUrl="https://www.eff.org/cyberspace-independence"
       sourceName="A Declaration of the Independence of Cyberspace"/>
-    <div id="cloud" class="w-full min-h-full p-0 p-8 md:flex md:flex-col md:items-center">
+    <div id="cloud" class="w-full min-h-full p-8 md:flex md:flex-col md:items-center">
       <h3 class="self-start pb-3 text-2xl text-white">I believe in the power of the web...</h3>
       <article class="max-w-3xl p-6 -mx-6 text-gray-700 bg-white border-8 border-gray-900 md:mt-32 text-md">
         <p>
@@ -30,7 +30,7 @@
       sourceUrl="https://sites.evergreen.edu/politicalshakespeares/wp-content/uploads/sites/226/2015/12/Haraway-Cyborg-Manifesto-2.pdf"
       sourceName="A Cyborg Manifesto"
       class="my-64 lg:my-0" />
-    <div id="charm" class="w-full p-0 p-8 md:flex md:flex-col md:items-center">
+    <div id="charm" class="w-full p-8 md:flex md:flex-col md:items-center">
       <h3 class="self-start pb-3 text-2xl text-white">I believe in people...</h3>
       <article class="max-w-3xl p-6 -mx-6 text-gray-700 bg-white border-8 border-gray-900 md:mt-32 text-md">
         <p>
@@ -63,13 +63,13 @@
       It is hosted on both the standard web using <a class="underline" href="https://aws.amazon.com">AWS</a> and the <a class="underline" href="dat://earthtone.hashbase.io">decentralized web</a> using <a class="underline" href="https://hashbase.io">Hashbase</a>.
       </p>
     </div>
-  </Layout>
+  </DefaultLayout>
 </template>
 
 <script>
 import Hero from '@/components/home/Hero.vue'
 import Quotation from '@/components/home/Quotation.vue'
-import { computed, reactive } from '@vue/composition-api'
+import { reactive } from '@vue/composition-api'
 import { TweenLite } from 'gsap'
 
 const tech = [
