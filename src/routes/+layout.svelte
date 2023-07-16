@@ -1,13 +1,6 @@
 <script>
-    import NavList from "../lib/components/NavList.svelte";
+  import "$lib/styles/reset.css";
+  import "$lib/styles/typography.css";
 </script>
-<main>
-  <header>
-    <slot name="logo"><span></span></slot>
-    <NavList links={[]}/>
-  </header>
-  <slot></slot>
-  <footer>
-    <NavList links={[]}/>
-  </footer>
-</main>
+
+<main><slot /></main>
